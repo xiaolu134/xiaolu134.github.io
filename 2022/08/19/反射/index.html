@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | Hexo</title>
+  <title>反射 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="1. Junit单元测试（重在应用）1.1 概述: JUnit是一个Java语言的单元测试  单元：一个方法就是一个单元  测试:  测方法中的代码逻辑是否正确   1.2 作用 替代main方法   10  10  求和   求积数   求商数 ​	一个类只能有一个main方法 如果有N个功能要单独测试的话， ​        需要写N个类由N个main方法进行不同的测试  单元测试让功能的测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="反射">
+<meta property="og:url" content="http://example.com/2022/08/19/%E5%8F%8D%E5%B0%84/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. Junit单元测试（重在应用）1.1 概述: JUnit是一个Java语言的单元测试  单元：一个方法就是一个单元  测试:  测方法中的代码逻辑是否正确   1.2 作用 替代main方法   10  10  求和   求积数   求商数 ​	一个类只能有一个main方法 如果有N个功能要单独测试的话， ​        需要写N个类由N个main方法进行不同的测试  单元测试让功能的测试">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-19T00:57:25.832Z">
+<meta property="article:modified_time" content="2022-08-19T01:25:59.760Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,76 +154,455 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-反射" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/19/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-08-19T01:28:34.823Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/19/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">工厂模式</a>
+    <h1 class="article-title" itemprop="name">
+      反射
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/19/%E5%8F%8D%E5%B0%84/" class="archive-article-date">
+        
+        <a href="/2022/08/19/%E5%8F%8D%E5%B0%84/" class="archive-article-date">
   	<time datetime="2022-08-19T00:57:25.832Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-19</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/19/%E5%8F%8D%E5%B0%84/">反射</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Junit单元测试（重在应用）"><a href="#1-Junit单元测试（重在应用）" class="headerlink" title="1. Junit单元测试（重在应用）"></a>1. Junit单元测试（重在应用）</h1><h3 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述:"></a>1.1 概述:</h3><ul>
+<li><p>JUnit是一个Java语言的单元测试</p>
+</li>
+<li><p>单元：一个方法就是一个单元</p>
+</li>
+<li><p>测试:  测方法中的代码逻辑是否正确</p>
+</li>
+</ul>
+<h3 id="1-2-作用"><a href="#1-2-作用" class="headerlink" title="1.2 作用"></a>1.2 作用</h3><ul>
+<li><p>替代main方法   10  10  求和   求积数   求商数</p>
+<p>​	一个类只能有一个main方法 如果有N个功能要单独测试的话，</p>
+<p>​        需要写N个类由N个main方法进行不同的测试  单元测试让功能的测试更加的简单</p>
+</li>
+</ul>
+<h3 id="1-3-实现方式"><a href="#1-3-实现方式" class="headerlink" title="1.3 实现方式"></a>1.3 实现方式</h3><ul>
+<li><p>JUnit的使用步骤</p>
+<ul>
+<li>1.导JUnit单元测试的jar包 (idea开发工具已经集成了junit的jar包)</li>
+<li>2.在类中要测试的方法上添加 @Test</li>
+<li>3.测试执行</li>
+</ul>
+</li>
+<li><p>JUnit的细节整理</p>
+<ul>
+<li><p>1.方法必须得是公共的</p>
+</li>
+<li><p>2.返回值必须得是void</p>
+</li>
+<li><p>3.方法不能有任何的参数</p>
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class JunitDemo &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 单元测试的细节点</span><br><span class="line">     *          1.修饰符必须是公共的</span><br><span class="line">     *          2.方法的返回值必须是void</span><br><span class="line">     *          3.方法必须是无参</span><br><span class="line">     *		    4.注解必须加在方法上</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void test() &#123;</span><br><span class="line">        System.out.println(&quot;这个方法用于聊细节&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+ <span id="more"></span> 
+</li>
+<li><p>常见注解</p>
+<ul>
+<li><p>@Before：在每个测试方法之前都会运行一次</p>
+</li>
+<li><p>@After：在每个测试方法运行以后运行的方法</p>
+</li>
+<li><p>@Test: 方法测试</p>
+<h5 id="示例-1"><a href="#示例-1" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JunitDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 单元测试的细节点</span></span><br><span class="line"><span class="comment">     *          1.修饰符必须是公共的</span></span><br><span class="line"><span class="comment">     *          2.方法的返回值必须是void</span></span><br><span class="line"><span class="comment">     *          3.方法必须是无参</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;这个方法用于聊细节&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * before在<span class="doctag">@Test</span>执行之前执行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">before</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;在@Test执行之前执行...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * after@Test执行之后执行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@After</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">after</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;@Test执行之后执行...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h1 id="2-反射"><a href="#2-反射" class="headerlink" title="2. 反射"></a>2. 反射</h1><h3 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述:"></a>2.1 概述:</h3><ul>
+<li>反射是一种机制，利用该机制可以在程序运行过程中对类进行解剖并操作类中的方法，属性，构造方法成员</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">类:</span><br><span class="line">    构造方法</span><br><span class="line">    成员方法</span><br><span class="line">    成员变量</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">一个类的执行流程：</span><br><span class="line">hello.java    ---编译--&gt;   hello.class    ---加载内存--&gt;  运行</span><br><span class="line">Student.java  ---编译--&gt;   Student.class  ---加载内存--&gt;  运行</span><br><span class="line">Person.java   ---编译--&gt;   Person.class   ---加载内存--&gt;  运行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">接收类型：<span class="type">int</span>类型用来接收数值，String类型用来接收字符串</span><br><span class="line">同理  hello.<span class="keyword">class</span>  <span class="title class_">Student</span>.<span class="keyword">class</span>  <span class="title class_">Person</span>.class也可以被指定类型接收</span><br><span class="line">Class（字节码对象）: 接收一切类的字节码</span><br><span class="line">Constructor（构造器对象）: 接收类中的一切构造方法</span><br><span class="line">Method（方法对象）: 接收类中的一切成员方法</span><br><span class="line">Field（变量对象）: 接收类中的一切成员变量</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
 
+
+<h3 id="2-2-作用："><a href="#2-2-作用：" class="headerlink" title="2.2 作用："></a>2.2 作用：</h3><ul>
+<li>通过反射可以获取到每个类的字节码对象，拿到其中的构造方法，成员方法和成员变量</li>
+</ul>
+<p>ps应用场景: 后期我们要学的ssm框架底层用到了很多的反射机制，为了后面能够更加理解框架，这里需要同学们对反射机制熟练化</p>
+<h3 id="2-3-核心："><a href="#2-3-核心：" class="headerlink" title="2.3 核心："></a>2.3 核心：</h3><h4 id="2-3-1-反射获取字节码对象的三种方式（重要）"><a href="#2-3-1-反射获取字节码对象的三种方式（重要）" class="headerlink" title="2.3.1 反射获取字节码对象的三种方式（重要）"></a>2.3.1 反射获取字节码对象的三种方式（重要）</h4><ul>
+<li><p>方式1：通过类名.class获取</p>
+<h5 id="示例-2"><a href="#示例-2" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GetClassDemo</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 方式1：通过类名.class获取</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span>	</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Student.class;</span><br><span class="line">        System.out.println(<span class="string">&quot;clazz = &quot;</span> + clazz);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>方式2：通过Object类的成员方法getClass()方法获取</p>
+<h5 id="示例-3"><a href="#示例-3" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GetClassDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 方式2：通过Object类的成员方法getClass()方法获取</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test02</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>().getClass();</span><br><span class="line">        System.out.println(<span class="string">&quot;clazz = &quot;</span> + clazz);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>方式3：通过Class.forName(“全限定名”)方法获取</p>
+<h5 id="示例-4"><a href="#示例-4" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GetClassDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通过Class.forName(&quot;全限定名&quot;)方法获取</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test03</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;clazz = &quot;</span> + clazz);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>ps全限定名: 就是包名 + 类名</p>
+</li>
+</ul>
+<h4 id="2-3-2-相关API-Class-Constructor-Method-Field"><a href="#2-3-2-相关API-Class-Constructor-Method-Field" class="headerlink" title="2.3.2 相关API(Class, Constructor,Method,Field)"></a>2.3.2 相关API(Class, Constructor,Method,Field)</h4><h5 id="1-Class对象相关方法"><a href="#1-Class对象相关方法" class="headerlink" title="1. Class对象相关方法"></a>1. Class对象相关方法</h5><ul>
+<li><p>String getName(); 获取全限定名，包含 包名+类名</p>
+<h5 id="示例-5"><a href="#示例-5" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ClassAPTDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, IllegalAccessException, InstantiationException &#123;</span><br><span class="line">        <span class="comment">//获取字节码文件</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//获取全限定类名</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> clazz.getName();</span><br><span class="line">        System.out.println(<span class="string">&quot;name = &quot;</span> + name);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>String getSimpleName(); 获得简单类名，只是类名，没有包名</p>
+<h5 id="示例-6"><a href="#示例-6" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ClassAPTDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, IllegalAccessException, InstantiationException &#123;</span><br><span class="line">        <span class="comment">//获取字节码文件</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取简单类名</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> clazz.getSimpleName();</span><br><span class="line">        System.out.println(<span class="string">&quot;name = &quot;</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>T newInstance() ;创建此 Class 对象所表示的类的一个新实例。要求：类必须有public的无参数构造方法</p>
+<h5 id="示例-7"><a href="#示例-7" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ClassAPTDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, IllegalAccessException, InstantiationException &#123;</span><br><span class="line">        <span class="comment">//获取字节码文件</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//直接创建对象--&gt;类必须有public的无参数构造方法</span></span><br><span class="line">        <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> (Student) clazz.newInstance();</span><br><span class="line">        System.out.println(<span class="string">&quot;student = &quot;</span> + student);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="2-操作构造方法-Constructor-–3遍以上"><a href="#2-操作构造方法-Constructor-–3遍以上" class="headerlink" title="2. 操作构造方法(Constructor)–3遍以上"></a>2. 操作构造方法(Constructor)–3遍以上</h5><ul>
+<li><p>Constructor getConstructor(Class… parameterTypes)<br>根据参数类型获取构造方法对象，只能获得public修饰的构造方法。 </p>
+<h5 id="示例-8"><a href="#示例-8" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConstructorDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="comment">//根据字节码对象获取构造器对象(Constructor)</span></span><br><span class="line">        <span class="comment">//1.获取公共的无参构造器--&gt;通过无参构造器创建对象</span></span><br><span class="line">        <span class="type">Constructor</span> <span class="variable">constructor1</span> <span class="operator">=</span> clazz.getConstructor();</span><br><span class="line">        System.out.println(<span class="string">&quot;constructor1 = &quot;</span> + constructor1);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.获取公共的有参构造器--&gt;通过有参构造器创建对象</span></span><br><span class="line">        <span class="comment">//有参:添加参数类型(字节码类型 .class类型)</span></span><br><span class="line">        <span class="type">Constructor</span> <span class="variable">constructor2</span> <span class="operator">=</span> clazz.getConstructor(String.class, <span class="type">int</span>.class);</span><br><span class="line">        System.out.println(<span class="string">&quot;constructor2 = &quot;</span> + constructor2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>Constructor getDeclaredConstructor(Class… parameterTypes)<br>根据参数类型获取构造方法对象，包括private修饰的构造方法。     </p>
+<h5 id="示例-9"><a href="#示例-9" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConstructorDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//获取私有的有参构造器--&gt;通过有参构造器对象</span></span><br><span class="line">        <span class="comment">//可以获取公共和私有的构造器,建议只用来获取私有</span></span><br><span class="line">        <span class="type">Constructor</span> <span class="variable">constructor3</span> <span class="operator">=</span> clazz.getDeclaredConstructor(String.class);</span><br><span class="line">        System.out.println(<span class="string">&quot;constructor3 = &quot;</span> + constructor3);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>T newInstance(Object… initargs)<br>根据构造器中的指定参数创建对象。</p>
+<h5 id="示例-10"><a href="#示例-10" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConstructorDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取公共的无参构造器--通过无参构造器创建对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="type">Constructor</span> <span class="variable">constructor</span> <span class="operator">=</span> clazz.getConstructor();</span><br><span class="line">        <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> (Student) constructor.newInstance();</span><br><span class="line">        System.out.println(<span class="string">&quot;student = &quot;</span> + student);</span><br><span class="line">		</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取公共的有参构造器--通过有参构造器创建对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test02</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="type">Constructor</span> <span class="variable">constructor</span> <span class="operator">=</span> clazz.getConstructor(String.class, <span class="type">int</span>.class);</span><br><span class="line">        <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> (Student) constructor.newInstance(<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;student = &quot;</span> + student);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取私有的有参构造器--通过有参构造器创建对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test03</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">          <span class="type">Constructor</span> <span class="variable">constructor</span> <span class="operator">=</span> clazz.getDeclaredConstructor(String.class);</span><br><span class="line">        <span class="comment">//暴力破解私有</span></span><br><span class="line">        constructor.setAccessible(<span class="literal">true</span>);</span><br><span class="line">        <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> (Student) constructor.newInstance(<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;student = &quot;</span> + student);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>void setAccessible(true)<br>暴力反射，设置为可以直接访问私有类型的构造方法</p>
+</li>
+<li><p>Constructor[] getConstructors()   (了解)<br>获取所有的public修饰的构造方法</p>
+<h5 id="示例-11"><a href="#示例-11" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConstructorDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取所有的公共构造器</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        Constructor[] constructors = clazz.getConstructors();</span><br><span class="line">        <span class="keyword">for</span> (Constructor constructor : constructors) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;constructor = &quot;</span> + constructor);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>Constructor[] getDeclaredConstructors()   (了解)<br>获取所有构造方法，包括privat修饰的 </p>
+<h5 id="示例-12"><a href="#示例-12" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConstructorDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取所有的公共构造器和私有构造器</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        Constructor[] constructors = clazz.getDeclaredConstructors();</span><br><span class="line">        <span class="keyword">for</span> (Constructor constructor : constructors) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;constructor = &quot;</span> + constructor);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="3-操作方法-Method-–3遍以上"><a href="#3-操作方法-Method-–3遍以上" class="headerlink" title="3. 操作方法(Method)–3遍以上"></a>3. 操作方法(Method)–3遍以上</h5><p>Method是方法类，类中的每一个方法都是Method的对象，通过Method对象可以调用方法。</p>
+<ul>
+<li><p>Method getMethod(“方法名”, 方法的参数类型… 类型)<br>根据方法名和参数类型获得一个方法对象，只能是获取public修饰的</p>
+<h5 id="示例-13"><a href="#示例-13" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException &#123;</span><br><span class="line">        <span class="comment">//1.获取字节码对象</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="comment">//2.获取公共的方法</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">method1</span> <span class="operator">=</span> clazz.getMethod(<span class="string">&quot;getName&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;method1 = &quot;</span> + method1);</span><br><span class="line">        <span class="type">Method</span> <span class="variable">method2</span> <span class="operator">=</span> clazz.getMethod(<span class="string">&quot;setName&quot;</span>, String.class);</span><br><span class="line">        System.out.println(<span class="string">&quot;method2 = &quot;</span> + method2);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>Method getDeclaredMethod(“方法名”, 方法的参数类型… 类型)<br>根据方法名和参数类型获得一个方法对象，包括private修饰的</p>
+<h5 id="示例-14"><a href="#示例-14" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException &#123;</span><br><span class="line">        <span class="comment">//1.获取字节码对象</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">    </span><br><span class="line">        <span class="comment">//2.获取私有的方法</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> clazz.getDeclaredMethod(<span class="string">&quot;getName&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;method = &quot;</span> + method);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>Object invoke(Object obj, Object… args)  核心方法<br>使用反射的方式让一个方法执行 </p>
+<p>obj  :   要执行该方法的对象 </p>
+<p>args  :  方法运行过程中需要的参数</p>
+<h5 id="示例-15"><a href="#示例-15" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取公共的无参的run方法--&gt;然run方法执行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> (Student) clazz.newInstance();</span><br><span class="line">        <span class="comment">//获取公共的无参的run方法--&gt;然run方法执行</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">method1</span> <span class="operator">=</span> clazz.getMethod(<span class="string">&quot;run&quot;</span>);</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 方法执行</span></span><br><span class="line"><span class="comment">         * 参数1:执行该方法的对象</span></span><br><span class="line"><span class="comment">         * 参数2:方法运行中需要的参数,没有就不写</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> (String) method1.invoke(student);</span><br><span class="line">        System.out.println(<span class="string">&quot;value = &quot;</span> + value);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取公共的有参的run方法--&gt;然run方法执行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test02</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> (Student) clazz.newInstance();</span><br><span class="line">        <span class="comment">//获取公共的有参的run方法--&gt;然run方法执行</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> clazz.getMethod(<span class="string">&quot;run&quot;</span>, String.class);</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 方法执行</span></span><br><span class="line"><span class="comment">         * 参数1:执行该方法的对象</span></span><br><span class="line"><span class="comment">         * 参数2:方法运行中需要的参数,没有就不写</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        method.invoke(student, <span class="string">&quot;aaaaaa&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取私有的有参的run方法--&gt;然run方法执行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test03</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> (Student) clazz.newInstance();</span><br><span class="line">        <span class="comment">//获取公共的有参的run方法--&gt;然run方法执行</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> clazz.getDeclaredMethod(<span class="string">&quot;stop&quot;</span>, String.class);</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 方法执行</span></span><br><span class="line"><span class="comment">         * 参数1:执行该方法的对象</span></span><br><span class="line"><span class="comment">         * 参数2:方法运行中需要的参数,没有就不写</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">//暴力破解	</span></span><br><span class="line">        method.setAccessible(<span class="literal">true</span>);</span><br><span class="line">        method.invoke(student, <span class="string">&quot;aaaaaa&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>void setAccessible(boolean flag)<br>暴力反射，设置为true可以直接调用私有修饰的成员方法 </p>
+</li>
+<li><p>Method[] getMethods() (了解)<br>获取所有的public修饰的成员方法，包括父类中。</p>
+<h5 id="示例-16"><a href="#示例-16" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取所有公共的(包含父类的)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        Method[] methods = clazz.getMethods();</span><br><span class="line">        <span class="keyword">for</span> (Method method : methods) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;method = &quot;</span> + method);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>Method[] getDeclaredMethods() (了解)<br>获取当前类中所有的方法，包含私有的，不包括父类中。</p>
+<h5 id="示例-17"><a href="#示例-17" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取所有私有的(不包含父类的)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException &#123;</span><br><span class="line">        <span class="comment">//获取字节码</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//获取所有的公共和私有方法(不包含父类)</span></span><br><span class="line">        Method[] declaredMethods = clazz.getDeclaredMethods();</span><br><span class="line">        <span class="keyword">for</span> (Method method : declaredMethods) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;method = &quot;</span> + method);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="4-操作属性-Field-成员变量–了解"><a href="#4-操作属性-Field-成员变量–了解" class="headerlink" title="4. 操作属性(Field)成员变量–了解"></a>4. 操作属性(Field)成员变量–了解</h5><p>Field是属性类，类中的每一个属性(成员变量)都是Field的对象，通过Field对象可以给对应的成员变量赋值和取值。</p>
+<ul>
+<li><p>Field getField(String name)<br>根据属性名获得属性对象，只能获取public修饰的</p>
+<h5 id="示例-18"><a href="#示例-18" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FieldDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取公共字段</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchFieldException &#123;</span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="comment">//获取公共的字段</span></span><br><span class="line">        <span class="comment">//参数:字段名</span></span><br><span class="line">        <span class="type">Field</span> <span class="variable">field</span> <span class="operator">=</span> clazz.getField(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;field = &quot;</span> + field);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>Field getDeclaredField(String name)<br>根据属性名获得属性对象，包括private修饰的</p>
+<h5 id="示例-19"><a href="#示例-19" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FieldDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取私有字段</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchFieldException &#123;</span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="comment">//获取私有字段</span></span><br><span class="line">        <span class="comment">//参数:字段名</span></span><br><span class="line">        <span class="comment">//获取私有字段</span></span><br><span class="line">        <span class="type">Field</span> <span class="variable">field</span> <span class="operator">=</span> clazz.getDeclaredField(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;field = &quot;</span> + field);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>Field[] getFields()<br>获取所有的public修饰的属性对象，返回数组。</p>
+<h5 id="示例-20"><a href="#示例-20" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FieldDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取所有公共字段</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchFieldException &#123;</span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="comment">//获取所有的公共字段</span></span><br><span class="line">        Field[] fields = clazz.getFields();</span><br><span class="line">        <span class="keyword">for</span> (Field field : fields) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;field = &quot;</span> + field);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>Field[] getDeclaredFields()<br>获取所有的属性对象，包括private修饰的，返回数组</p>
+<h5 id="示例-21"><a href="#示例-21" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FieldDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取所有字段</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchFieldException &#123;</span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="comment">//获取所有字段(私有和公共)</span></span><br><span class="line">        Field[] declaredFields = clazz.getDeclaredFields();</span><br><span class="line">        <span class="keyword">for</span> (Field field : declaredFields) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;field = &quot;</span> + field);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>getType()  (了解)<br>反射获取字段类型的全限定名</p>
+<h5 id="示例-22"><a href="#示例-22" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FieldDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 反射获取字段类型的全限定名</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchFieldException &#123;</span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="comment">//获取所有字段(私有和公共)</span></span><br><span class="line">        Field[] declaredFields = clazz.getDeclaredFields();</span><br><span class="line">        <span class="keyword">for</span> (Field field : declaredFields) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;field = &quot;</span> + field);</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * 获取当期属性的类型的全类名</span></span><br><span class="line"><span class="comment">             * java.lang.string</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            System.out.println(<span class="string">&quot;field = &quot;</span> + field.getType());</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>set(字段所属的对象，要赋的值)</p>
+<p>给字段赋值的，如果是私有的还是要先暴力破解</p>
+<h5 id="示例-23"><a href="#示例-23" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FieldDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 给属性赋值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchFieldException, IllegalAccessException, InstantiationException &#123;</span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.entity.Student&quot;</span>);</span><br><span class="line">        <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> (Student) clazz.newInstance();</span><br><span class="line">        <span class="type">Field</span> <span class="variable">field1</span> <span class="operator">=</span> clazz.getField(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 赋值</span></span><br><span class="line"><span class="comment">         * 参数1:本身这个字段所属的对象</span></span><br><span class="line"><span class="comment">         * 参数2:要赋的值</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        field1.set(student, <span class="string">&quot;迪丽热巴&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;student = &quot;</span> + student);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//私有属性</span></span><br><span class="line">        <span class="type">Field</span> <span class="variable">field2</span> <span class="operator">=</span> clazz.getDeclaredField(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">        field2.setAccessible(<span class="literal">true</span>);</span><br><span class="line">        field2.set(student, <span class="number">19</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;student = &quot;</span> + student);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结:"></a>小结:</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">junit: 单元测试</span><br><span class="line">	作用: 代替main方法</span><br><span class="line">	使用:</span><br><span class="line">		<span class="number">1.</span>导入junit的jar包</span><br><span class="line">		<span class="number">2.</span>编写单元测试类(公共,无参,无返回值)</span><br><span class="line">			<span class="meta">@Test</span></span><br><span class="line">        <span class="number">3.</span>在测试类中编写测试逻辑</span><br><span class="line">	API:</span><br><span class="line">		<span class="meta">@Before</span></span><br><span class="line">		<span class="meta">@After</span></span><br><span class="line">反射:</span><br><span class="line">	作用: 解剖字节码文件</span><br><span class="line">		Class: 类的字节码</span><br><span class="line">		Constructor: 构造器的字节码</span><br><span class="line">		Method: 方法的字节码</span><br><span class="line">		Field: 属性的字节码</span><br><span class="line">作业:</span><br><span class="line">	使用反射技术,解析properties配置文件中的信息,将读取的信息封装到Student实体中.</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="案例1"><a href="#案例1" class="headerlink" title="案例1:"></a>案例1:</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">需求:使用反射技术,解析properties配置文件中的信息,将读取的信息封装到Student实体中.</span><br></pre></td></tr></table></figure>
+
+<h5 id="示例-properties配置文件"><a href="#示例-properties配置文件" class="headerlink" title="示例:properties配置文件"></a>示例:properties配置文件</h5><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">class</span>=<span class="string">cn.kgc.entity.Student</span></span><br><span class="line"><span class="attr">name</span>=<span class="string">abcd</span></span><br><span class="line"><span class="attr">age</span>=<span class="string">18</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="示例-java代码"><a href="#示例-java代码" class="headerlink" title="示例:java代码"></a>示例:java代码</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ReflectionDemo</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据配置文件进行解析,将解析的name和age...反射的方式赋值</span></span><br><span class="line"><span class="comment">     * 步骤:</span></span><br><span class="line"><span class="comment">     *      1.解析src下面的student.properties配置文件</span></span><br><span class="line"><span class="comment">     *      2.获取配置文件中的class的key得到value,根据value获取到全限定名</span></span><br><span class="line"><span class="comment">     *      3.根据指定key反射出student中的字段(Filed)</span></span><br><span class="line"><span class="comment">     *      4.根据执行key的value给获取到的字段赋值</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test1</span><span class="params">()</span> <span class="keyword">throws</span> IOException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException, InstantiationException &#123;</span><br><span class="line">        <span class="comment">//1.解析src下面的student.properties配置文件</span></span><br><span class="line">        <span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">        <span class="comment">//获取类加载器:可以加载src下面的配置文件直接转成流</span></span><br><span class="line">        <span class="comment">//类加载器:将.class字节码文件加载到内存    获取</span></span><br><span class="line">        <span class="comment">//FileInputStream inputStream = new FileInputStream(&quot;src/student.properties&quot;);</span></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> ReflectionDemo.class.getClassLoader().getResourceAsStream(<span class="string">&quot;student.properties&quot;</span>);</span><br><span class="line">        properties.load(inputStream);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.获取配置文件中的class的key得到value,根据value获取到全限定名</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(properties.getProperty(<span class="string">&quot;class&quot;</span>));</span><br><span class="line">        <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> (Student) clazz.newInstance();</span><br><span class="line">          <span class="comment">//根据指定的key反射出student中的字段(filed)</span></span><br><span class="line">        Set&lt;String&gt; keys = properties.stringPropertyNames();</span><br><span class="line">        <span class="keyword">for</span> (String key : keys) &#123;</span><br><span class="line">            <span class="comment">//判断只要age和name</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;class&quot;</span>.equals(key) == <span class="literal">false</span>) &#123;</span><br><span class="line">                <span class="comment">//根据key获取到字段对象</span></span><br><span class="line">                <span class="type">Field</span> <span class="variable">field</span> <span class="operator">=</span> clazz.getDeclaredField(key);</span><br><span class="line">                field.setAccessible(<span class="literal">true</span>);</span><br><span class="line">                <span class="comment">//赋值</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> properties.getProperty(key);</span><br><span class="line">                <span class="comment">//判断类型</span></span><br><span class="line">                <span class="keyword">if</span> (field.getType() == <span class="type">int</span>.class) &#123;</span><br><span class="line">                    <span class="comment">//4.根据指定的key的value给获取到的字段赋值</span></span><br><span class="line">                    field.set(student, Integer.parseInt(value));</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    field.set(student, value);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;student = &quot;</span> + student);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="3-注解"><a href="#3-注解" class="headerlink" title="3 注解"></a>3 注解</h1><h3 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述:"></a>3.1 概述:</h3><ul>
+<li>在java中由一个 @+一堆英文单词组成的集合就是注解</li>
+<li>它可以声明在类、字段、方法、局部变量、方法参数上等，用来对程序进行说明的</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">注释：给程序员看的</span><br><span class="line">注解：给程序去看的  </span><br><span class="line">声明不同注解可以让程序做不同的功能</span><br><span class="line"></span><br><span class="line">注解的学习明确：</span><br><span class="line">	  <span class="number">1</span> 明确java或者框架提供的注解都有什么功能</span><br><span class="line">	  <span class="number">2</span> 明确提供的注解能定义在哪个位置上 （类上 字段上 方法上 局部变量上 参数上）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-jdk中的注解"><a href="#3-2-jdk中的注解" class="headerlink" title="3.2 jdk中的注解"></a>3.2 jdk中的注解</h3><ul>
+<li>@Override<br>声明该方法是重写的方法</li>
+<li>@Deprecated<br>声明该方法不推荐使用</li>
+</ul>
+<h3 id="3-3-扩展：自定义注解"><a href="#3-3-扩展：自定义注解" class="headerlink" title="3.3 扩展：自定义注解"></a>3.3 扩展：自定义注解</h3><ul>
+<li><h4 id="格式"><a href="#格式" class="headerlink" title="格式:"></a>格式:</h4><ul>
+<li><p>public @interface  注解名称{</p>
+<p>​	 类型 属性名();</p>
+<p>​	 ………</p>
+<p>}<br>注解本质上就是一个特殊的接口</p>
+<p>注解中的方法叫做属性.</p>
+<h5 id="示例-24"><a href="#示例-24" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAn1 &#123;</span><br><span class="line"></span><br><span class="line">    String <span class="title function_">value</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h4 id="属性"><a href="#属性" class="headerlink" title="属性:"></a>属性:</h4><ul>
+<li><p>基本类型 (byte,short,int,long,float,double,boolean,char)</p>
+</li>
+<li><p>String</p>
+</li>
+<li><p>Class</p>
+</li>
+<li><p>Annotation</p>
+</li>
+<li><p>以上类型的一维数组</p>
+<h5 id="示例-25"><a href="#示例-25" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAn1 &#123;</span><br><span class="line"></span><br><span class="line">    String <span class="title function_">value</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">i</span><span class="params">()</span>;</span><br><span class="line">    Class <span class="title function_">clazz</span><span class="params">()</span>;</span><br><span class="line">    MyAn2 <span class="title function_">MY_AN_2</span><span class="params">()</span>;</span><br><span class="line">    String[] arr();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>常见的注解类</p>
+<ul>
+<li><p>myAnnotation</p>
+<h5 id="示例-26"><a href="#示例-26" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAn2 &#123;</span><br><span class="line">    String <span class="title function_">value</span><span class="params">()</span> <span class="keyword">default</span> <span class="string">&quot;123&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>myAnnotation(“abc”)</p>
+<h5 id="示例-27"><a href="#示例-27" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAn3 &#123;</span><br><span class="line">    String <span class="title function_">value</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>myAnnotation(value &#x3D; “asd”, i &#x3D; 123,arr &#x3D; {“aa”, “bb”, “cc”})</p>
+<h5 id="示例-28"><a href="#示例-28" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAn4 &#123;</span><br><span class="line"></span><br><span class="line">    String <span class="title function_">value</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">i</span><span class="params">()</span>;</span><br><span class="line">    String[] arr();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>注意事项:</p>
+<ul>
+<li>注解一旦有了属性,使用注解时,必须给属性赋值</li>
+<li>注解属性名称如果为value且只有一个,那么属性名称可以省去不写</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">自定义注解小结:</span><br><span class="line">	<span class="number">1.</span>自定义注解格式: <span class="keyword">public</span> <span class="meta">@interface</span> 注解名称&#123;&#125;</span><br><span class="line">	<span class="number">2.</span>注解可以使用在类,方法,接口,成员变量,局部变量....</span><br><span class="line">    <span class="number">3.</span>注解中的方法不叫方法,叫属性</span><br><span class="line">    <span class="number">4.</span>当注解中有属性时,使用该注解时,必须给注解中的属性赋值</span><br><span class="line">    <span class="number">5.</span>注解属性名称如果为value且只有一个,那么属性名称可以省去不写</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-4-元注解"><a href="#3-4-元注解" class="headerlink" title="3.4 元注解"></a>3.4 元注解</h3><p>定义在注解之上的注解被称为元注解</p>
+<ul>
+<li><p>@Target 定义该注解作用在什么上面 值为:</p>
+<ul>
+<li><p>METHOD:方法</p>
+</li>
+<li><p>TYPE:类 接口</p>
+</li>
+<li><p>FIELD:字段</p>
+<h5 id="示例-29"><a href="#示例-29" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123;ElementType.METHOD, ElementType.TYPE, ElementType.FIELD&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAn5 &#123;</span><br><span class="line">    String <span class="title function_">name</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">age</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>@Retention 定义该注解保留到那个代码阶段 值为:</p>
+<ul>
+<li><p>SOURCE:注解只在源码上保留 (默认)</p>
+</li>
+<li><p>CLASS:注解在源码和字节码上保留</p>
+</li>
+<li><p>RUNTIME:注解在所有的阶段都保留</p>
+<h5 id="示例-30"><a href="#示例-30" class="headerlink" title="示例:"></a>示例:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123;ElementType.METHOD, ElementType.TYPE, ElementType.FIELD&#125;)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME, )</span>  <span class="comment">//当前注解只保留在源码时期</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAn4 &#123;</span><br><span class="line">    String <span class="title function_">name</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">age</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-5-解析注解"><a href="#3-5-解析注解" class="headerlink" title="3.5 解析注解"></a>3.5 解析注解</h3><p>反射机制</p>
+<ul>
+<li>method.isAnnotationPresent(注解.class):判断方法上是否有指定的注解</li>
+<li>method.getAnnotation(注解.class);获取方法上指定的注解</li>
+</ul>
+<h3 id="案例2-自定-MyTest注解-实现单元测试的功能"><a href="#案例2-自定-MyTest注解-实现单元测试的功能" class="headerlink" title="案例2-自定@MyTest注解,实现单元测试的功能"></a>案例2-自定@MyTest注解,实现单元测试的功能</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">需求分析:</span><br><span class="line">	定义一个类,在类中提供多个方法,在部分方法上添加自定义的 <span class="meta">@MyTest</span> 注解,让带有<span class="meta">@MyTest</span>的注解方法执行.</span><br><span class="line">技术分析:</span><br><span class="line">	自定义注解 <span class="meta">@MyTest</span></span><br><span class="line">步骤分析:</span><br><span class="line">	<span class="number">1.</span>定义<span class="meta">@MyTest</span>注解,声明该注解只能使用在方法上,生成注解的存活时期为运行时期</span><br><span class="line">	<span class="number">2.</span>定义一个类,在类中提供多个方法,在部分方法上添加MyTest注解</span><br><span class="line">	<span class="number">3.</span>让带有<span class="meta">@MyTest</span>的方法执行</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="示例-MyTest注解"><a href="#示例-MyTest注解" class="headerlink" title="示例@MyTest注解:"></a>示例@MyTest注解:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(ElementType.METHOD)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyTest &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="示例AnnotationDemo类"><a href="#示例AnnotationDemo类" class="headerlink" title="示例AnnotationDemo类:"></a>示例AnnotationDemo类:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AnnotationDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyTest</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test01</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;如今的现在早已不是曾经说好的以后...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyTest</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">test02</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我希望你们下去把反射练3遍&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyTest</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test03</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我的爱好:迪丽热巴&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="示例AnnotationMain类"><a href="#示例AnnotationMain类" class="headerlink" title="示例AnnotationMain类:"></a>示例AnnotationMain类:</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: Reflection-&gt;AnnotationMain</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 自定义注解启动</span></span><br><span class="line"><span class="comment"> *              目的:模拟<span class="doctag">@Test</span> 让有<span class="doctag">@MyTest</span>注解的方法实现测试功能</span></span><br><span class="line"><span class="comment"> *              1.创建注解<span class="doctag">@MyTest</span></span></span><br><span class="line"><span class="comment"> *              2.使用元注解规范<span class="doctag">@MyTest</span>出现的位置</span></span><br><span class="line"><span class="comment"> *              3.使用元注解让<span class="doctag">@MyTest</span>保留到运行时期</span></span><br><span class="line"><span class="comment"> *              4.使用注解解析 让有<span class="doctag">@MyTest</span>注解的方法运行</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: 兵哥</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2020-01-10 02:04</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AnnotationMain</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException &#123;</span><br><span class="line">        <span class="comment">//通过反射获取到目标类的字节码文件</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.kgc.c_annotation.AnnotationDemo&quot;</span>);</span><br><span class="line">        <span class="type">AnnotationDemo</span> <span class="variable">annotationDemo</span> <span class="operator">=</span> (AnnotationDemo) clazz.newInstance();</span><br><span class="line">        <span class="comment">//获取所有自己的方法</span></span><br><span class="line">        Method[] Methods = clazz.getMethods();</span><br><span class="line">        <span class="keyword">for</span> (Method method : Methods) &#123;</span><br><span class="line">            <span class="comment">//判断每个方法上是否有注解</span></span><br><span class="line">            <span class="type">boolean</span> <span class="variable">b</span> <span class="operator">=</span> method.isAnnotationPresent(MyTest.class);</span><br><span class="line">            <span class="keyword">if</span> (b) &#123;</span><br><span class="line">                <span class="comment">//让方法执行</span></span><br><span class="line">                <span class="comment">//1.调用该方法的对象</span></span><br><span class="line">                <span class="comment">//2.方法运行过程中需要的参数</span></span><br><span class="line">                method.invoke(annotationDemo);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/19/%E5%8F%8D%E5%B0%84/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/08/19/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          工厂模式
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -242,8 +625,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

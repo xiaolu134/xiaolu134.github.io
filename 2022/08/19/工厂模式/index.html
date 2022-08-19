@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hello World | Hexo</title>
+  <title>工厂模式 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="1、工厂方法模式（Factory Method） 工厂方法模式分为以下三种： （1）、普通工厂模式 就是建立一个工厂类，对实现了同一接口的一些类进行实例的创建。首先看下关系图：  举例如下：（我们举一个发送邮件和短信的例子） 首先，创建二者的共同接口： 123public interface Sender &amp;#123;  public void Send(); &amp;#125;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2022/08/15/hello-world/index.html">
+<meta property="og:title" content="工厂模式">
+<meta property="og:url" content="http://example.com/2022/08/19/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="1、工厂方法模式（Factory Method） 工厂方法模式分为以下三种： （1）、普通工厂模式 就是建立一个工厂类，对实现了同一接口的一些类进行实例的创建。首先看下关系图：  举例如下：（我们举一个发送邮件和短信的例子） 首先，创建二者的共同接口： 123public interface Sender &amp;#123;  public void Send(); &amp;#125;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-08-15T01:56:57.891Z">
-<meta property="article:modified_time" content="2022-08-15T01:56:57.891Z">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-204dc45a48954c6599e5738581cc8803_720w.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-2ded2662725757dc8e47b9e9ebcf30e1_720w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-3ab976d1ca13c291b678f0a72c7693ae_720w.jpg">
+<meta property="article:published_time" content="2022-08-19T01:28:34.823Z">
+<meta property="article:modified_time" content="2022-08-19T01:29:22.962Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-204dc45a48954c6599e5738581cc8803_720w.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,39 +158,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-工厂模式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      工厂模式
     </h1>
   
 
         
-        <a href="/2022/08/15/hello-world/" class="archive-article-date">
-  	<time datetime="2022-08-15T01:56:57.891Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-15</time>
+        <a href="/2022/08/19/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2022-08-19T01:28:34.823Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <p><strong>1、工厂方法模式（Factory Method）</strong></p>
+<p>工厂方法模式分为以下三种：</p>
+<p><strong>（1）、普通工厂模式</strong></p>
+<p>就是建立一个工厂类，对实现了同一接口的一些类进行实例的创建。首先看下关系图：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-204dc45a48954c6599e5738581cc8803_720w.jpg" alt="img"></p>
+<p>举例如下：（我们举一个发送邮件和短信的例子）</p>
+<p>首先，创建二者的共同接口：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Sender &#123; </span><br><span class="line"> public void Send(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>其次，创建实现类：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class MailSender implements Sender &#123; </span><br><span class="line"> @Override </span><br><span class="line"> public void Send() &#123; </span><br><span class="line"> System.out.println(&quot;this is mailsender!&quot;); </span><br><span class="line"> &#125; </span><br><span class="line">&#125;</span><br><span class="line">public class SmsSender implements Sender &#123; </span><br><span class="line"> </span><br><span class="line"> @Override </span><br><span class="line"> public void Send() &#123; </span><br><span class="line"> System.out.println(&quot;this is sms sender!&quot;); </span><br><span class="line"> &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>最后，建工厂类：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class SendFactory &#123; </span><br><span class="line"> </span><br><span class="line"> public Sender produce(String type) &#123; </span><br><span class="line"> if (&quot;mail&quot;.equals(type)) &#123; </span><br><span class="line"> return new MailSender(); </span><br><span class="line"> &#125; else if (&quot;sms&quot;.equals(type)) &#123; </span><br><span class="line"> return new SmsSender(); </span><br><span class="line"> &#125; else &#123; </span><br><span class="line"> System.out.println(&quot;请输入正确的类型!&quot;); </span><br><span class="line"> return null; </span><br><span class="line"> &#125; </span><br><span class="line"> &#125; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>我们来测试下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class FactoryTest &#123; </span><br><span class="line"> </span><br><span class="line"> public static void main(String[] args) &#123; </span><br><span class="line"> SendFactory factory = new SendFactory(); </span><br><span class="line"> Sender sender = factory.produce(&quot;sms&quot;); </span><br><span class="line"> sender.Send(); </span><br><span class="line"> &#125; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>输出：this is sms sender!</p>
+<p><strong>(2)多个工厂方法模式</strong></p>
+<p>该模式是对普通工厂方法模式的改进，在普通工厂方法模式中，如果传递的字符串出错，则不能正确创建对象，而多个工厂方法模式是提供多个工厂方法，分别创建对象。关系图：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-2ded2662725757dc8e47b9e9ebcf30e1_720w.jpg" alt="img"></p>
+<p>将上面的代码做下修改，改动下SendFactory类就行，如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public Sender produceMail()&#123; </span><br><span class="line"></span><br><span class="line">return new MailSender(); </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">public Sender produceSms()&#123; </span><br><span class="line">return new SmsSender(); </span><br><span class="line">&#125; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>测试类如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class FactoryTest &#123; </span><br><span class="line"> </span><br><span class="line"> public static void main(String[] args) &#123; </span><br><span class="line"> SendFactory factory = new SendFactory(); </span><br><span class="line"> Sender sender = factory.produceMail(); </span><br><span class="line"> sender.Send(); </span><br><span class="line"> &#125; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>输出：this is mailsender!</p>
+<p>（3）<strong>静态工厂方法模式</strong></p>
+<p>将上面的多个工厂方法模式里的方法置为静态的，不需要创建实例，直接调用即可。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class SendFactory &#123; </span><br><span class="line"> </span><br><span class="line"> public static Sender produceMail()&#123; </span><br><span class="line"> return new MailSender(); </span><br><span class="line"> &#125; </span><br><span class="line"> </span><br><span class="line"> public static Sender produceSms()&#123; </span><br><span class="line"> return new SmsSender(); </span><br><span class="line"> &#125; </span><br><span class="line">&#125; </span><br><span class="line">public class FactoryTest &#123; </span><br><span class="line"> </span><br><span class="line"> public static void main(String[] args) &#123; </span><br><span class="line"> Sender sender = SendFactory.produceMail(); </span><br><span class="line"> sender.Send(); </span><br><span class="line"> &#125; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>输出：this is mailsender!</p>
+<p>总体来说，工厂模式适合：凡是出现了大量的产品需要创建，并且具有共同的接口时，可以通过工厂方法模式进行创建。在以上的三种模式中，第一种如果传入的字符串有误，不能正确创建对象，第三种相对于第二种，不需要实例化工厂类，所以，大多数情况下，我们会选用第三种——静态工厂方法模式。</p>
+<p><strong>2、抽象工厂模式（Abstract Factory）</strong></p>
+<p>工厂方法模式有一个问题就是，类的创建依赖工厂类，也就是说，如果想要拓展程序，必须对工厂类进行修改，这违背了闭包原则，所以，从设计角度考虑，有一定的问题，如何解决？就用到抽象工厂模式，创建多个工厂类，这样一旦需要增加新的功能，直接增加新的工厂类就可以了，不需要修改之前的代码。因为抽象工厂不太好理解，我们先看看图，然后就和代码，就比较容易理解。</p>
+<p><img src="https://pic3.zhimg.com/80/v2-3ab976d1ca13c291b678f0a72c7693ae_720w.jpg" alt="img"></p>
+<p>请看例子：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Sender &#123; </span><br><span class="line">public void Send(); </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+
+<p>两个实现类：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class MailSender implements Sender &#123; </span><br><span class="line"> @Override </span><br><span class="line"> public void Send() &#123; </span><br><span class="line"> System.out.println(&quot;this is mailsender!&quot;); </span><br><span class="line"> &#125; </span><br><span class="line">&#125;</span><br><span class="line">public class SmsSender implements Sender &#123; </span><br><span class="line"> </span><br><span class="line"> @Override </span><br><span class="line"> public void Send() &#123; </span><br><span class="line"> System.out.println(&quot;this is sms sender!&quot;); </span><br><span class="line"> &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>两个工厂类：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class SendMailFactory implements Provider &#123; </span><br><span class="line"></span><br><span class="line">@Override </span><br><span class="line">public Sender produce()&#123; </span><br><span class="line">return new MailSender(); </span><br><span class="line">&#125; </span><br><span class="line">&#125; </span><br><span class="line">public class SendSmsFactory implements Provider&#123; </span><br><span class="line"></span><br><span class="line">@Override </span><br><span class="line">public Sender produce() &#123; </span><br><span class="line">return new SmsSender(); </span><br><span class="line">&#125; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>在提供一个接口：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Provider &#123; </span><br><span class="line"> public Sender produce(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试类：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123; </span><br><span class="line"> </span><br><span class="line"> public static void main(String[] args) &#123; </span><br><span class="line"> Provider provider = new SendMailFactory(); </span><br><span class="line"> Sender sender = provider.produce(); </span><br><span class="line"> sender.Send(); </span><br><span class="line"> &#125; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>其实这个模式的好处就是，如果你现在想增加一个功能：发及时信息，则只需做一个实现类，实现Sender接口，同时做一个工厂类，实现Provider接口，就OK了，无需去改动现成的代码。这样做，拓展性较好！</p>
 
       
 
@@ -266,7 +314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/15/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/19/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,6 +326,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/19/%E5%8F%8D%E5%B0%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">反射</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
